@@ -18,14 +18,44 @@
 - [References](#references)
 
 # Abstract 
-ADC is an integral component of any electronic circuit which converts continuous time continuous amplitude analog signal into continuous time discrete amplitude digital signal. Among all the types of ADCs, flash type or direct conversion ADC is considered as the high speed ADC. This paper describes the circuit implementation & simulation of flash type ADC.
+Analog to Digital converters are 
+essential in all communication and signal 
+processing applications. Among all ADC’S 
+Flash ADC has a high speed conversion rate. It 
+has a capacity of sampling a signal up to Giga 
+Bites. The conventional Flash ADC contains
+the resistor ladder network, comparator, and 
+encoder. Due to the use of resistor ladder 
+network in conventional Flash ADC static 
+power consumption is more to overcome this 
+issue, new 3-Bit Flash ADC has been proposed. 
+The proposed ADC is consists of sample and 
+hold (S/H) circuit, threshold modified 
+comparator circuit and priority encoder. The 
+design is implemented with a supply voltage 
+of 1.8 V and clock frequency of 1M Hz. 
 
 # Reference Circuit Diagram
 ![image](https://user-images.githubusercontent.com/100668140/157507114-9d176bab-0dea-46c0-9a8f-f3aa83c42c9b.png)
 
 # Circuit Details
 
-A flash ADC uses linear voltage ladder with comparators at every stage which compares the input voltage with successive reference voltages which gives output in terms of 0 or 1 i.e. in digital form. Comparing with other types of ADC, flash ADC requires only single clock cycle for conversion, hence it is called as high speed ADC among all. At every resistor ladder tap, the voltages are created as 7Vref/8, 6Vref/8 upto 1Vref/8 respectively from top to bottom, connected to inverting terminal of opamp at every stage. These voltages are compared with input analog voltage and output of the opamp will be either Vsat or 0 which is represented as digital 1 & 0 respectively. These signals are provided to a 8:3 priority encoder which converts the digital data in binary format. 
+figure shown a 3 bit flash type A/D converter 
+which requires (2^3-1)=8 comparators.The 
+analog input which is to be converted is 
+connected to the non-inverting terminal.Input 
+terminal of comparator where as the inverting 
+input terminals of op-ams are connected to a 
+set of reference voltage provided by voltage 
+divider that divides it into 7 equal increment 
+levels.
+Each level is compared to the analog input by 
+a voltage comparator.All comparators O/Ps 
+are connected to a priority encoder,which 
+produces a digital o/p corresponding to the 
+i/p having highest priority.Thus,the digital o/p 
+represents the voltage that is closest in value 
+to the analog input
 
 # Resolution of ADC
 
@@ -37,17 +67,17 @@ Where, n is the number of output binary bits.
 
 # Proposed Methodology 
 
-•	Step 1 : 		Writing Verilog code for 8:3 Priority Encoder & simulating on Makerchip
+• Writing Verilog code for 8:3 Priority Encoder & simulating on Makerchip
 
-•	Step 2 : 		Model creation on NgVeri
+• Model creation on NgVeri
 
-•	Step 3 :		Schematics creation
+• Schematics creation
 
-•	Step 4 :		Creating Netlist
+• Creating Netlist
 
-•	Step 5 :		Setting simulation instance parameters on KicadToNgspice converter
+• Setting simulation instance parameters on KicadToNgspice converter
 
-•	Step 6: 		Simulation & Verification of results
+• Simulation & Verification of results
 
 # EDA Tools Used
 

@@ -1,5 +1,4 @@
 # 3_bit_flash_adc
-- [IMPLEMENTATION-OF-HIGH-SPEED-3-BIT-FLASH-TYPE-ADC](#implementation-of-high-speed-3-bit-flash-type-adc)
 - [Abstract](#abstract)
 - [Reference Circuit Diagram](#reference-circuit-diagram)
 - [Circuit Details](#circuit-details)
@@ -9,10 +8,8 @@
 - [Verilog Code](#verilog-code)
 - [Makerchip](#makerchip)
 - [Creating model of 8:3 Encoder using NgVeri](#creating-model-of-8-3-encoder-using-ngveri)
-- [Schematics](#schematics)
-- [Netlist](#netlist)
+- [Schematic](#schematic)
 - [Output Waveforms](#output-waveforms)
-- [GAW Waveforms](#gaw-waveforms)
 - [Author](#author)
 - [Acknowledgements](#acknowledgements)
 - [References](#references)
@@ -56,6 +53,8 @@ produces a digital o/p corresponding to the
 i/p having highest priority.Thus,the digital o/p 
 represents the voltage that is closest in value 
 to the analog input
+
+
 
 # Resolution of ADC
 
@@ -227,13 +226,58 @@ https://www.veripool.org/verilator/
 Following are the several waveforms for different inputs given to 8:3 encoder & their respective outputs :
 ![Capture1](https://user-images.githubusercontent.com/100668140/157508988-ca580f43-fb80-4836-bcfc-0725d0e078cd.PNG)
 
-# Schematics
+# Schematic
 
 ![Capture6](https://user-images.githubusercontent.com/100668140/157518064-cd1052ce-02f7-403b-9bff-930aa8c550c5.PNG)
 
 ![Capture2](https://user-images.githubusercontent.com/100668140/157518225-3adac47e-9d64-4d2d-873f-465b9bbf6abe.PNG)
 ![Capture3](https://user-images.githubusercontent.com/100668140/157518296-ea8e1444-ebc6-44f9-a0b9-e0efde8bd2c3.PNG)
 ![Capture5](https://user-images.githubusercontent.com/100668140/157518427-05054595-41b9-470f-8cd6-20d66851a0c5.PNG)
+
+# Output Waveforms
+
+For output testing I have taken Vref as 5v and Va as 5v. Also positive supply is 5v. So, voltages at inverting terminal of all the comparators are less than the inverting terminal voltage(i.e 5V) due to voltage divider circuit. So, output of all 7 comparators will be logic high (5v). Hence all the output digital bit will  be high(logic-1 i.e 5)
+
+![manoj2](https://user-images.githubusercontent.com/100668140/157723827-3bf394af-e0af-40aa-8ec5-02b8e55c90fb.JPG)
+
+
+![manoj](https://user-images.githubusercontent.com/100668140/157721278-0e1d16c0-88e6-4062-8686-9005f2e7f273.JPG)
+
+# Author
+
+MANOJ KUMAR SINGH
+
+M.Tech 2nd semester
+
+Indian Institute Of Information Technology,Allahabad
+
+
+# Acknowledgements
+
+1.	Kunal Ghosh (Co-Founder, VLSI System Design Pvt. Ltd.)
+
+2.	FOSSEE, IIT Bombay	
+
+3.	Steve Hoover (Founder, Redwood EDA)
+	
+4.	Sumanto Kar (eSim Team, FOSSEE, IIT Bombay)
+
+# References
+
+1.	 . Swarupa B N, Dr. Vijaya Prakash A M, 
+Kumaraswamy K V “Implementation of a 3-bit 
+Flash ADC using TIQ Modified Comparator 
+Circuit and NORROM based Encoder” 
+International Journal of Innovative Research 
+in Computer and Communication Engineering 
+Vol. 5, Issue 5, May 2016. 
+
+2.	Mayur. S. M, Siddharth R. K, Nithin Kumar 
+Y. B, Vasantha M. H “Design of Low Power 5-
+bit Hybrid Flash ADC” 2016 IEEE Computer 
+Society Annual Symposium on VLSI
+
+
 
 
 

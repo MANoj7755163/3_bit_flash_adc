@@ -54,6 +54,11 @@ i/p having highest priority.Thus,the digital o/p
 represents the voltage that is closest in value 
 to the analog input
 
+- TRUTH TABLE OF 3BIT FLASH ADC
+![image](https://user-images.githubusercontent.com/100668140/157727943-18f01e8b-3fe2-454b-910c-0b4cc4305098.png)
+
+
+
 
 
 # Resolution of ADC
